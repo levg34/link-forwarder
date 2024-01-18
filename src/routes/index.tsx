@@ -4,10 +4,10 @@ import { Show, createSignal } from 'solid-js'
 import QrCode from '~/components/QrCode'
 
 export default function Home() {
-    const [text, setText] = createSignal<string>('Test text')
+    const [text, setText] = createSignal<string>('')
     return (
         <main>
-            <h1>Hello world!</h1>
+            <h1>Link forwardinator 📡</h1>
             <div>
                 <input
                     type="text"
@@ -15,6 +15,7 @@ export default function Home() {
                     oninput={(e) => {
                         setText(e.target.value)
                     }}
+                    placeholder="Enter URL or text"
                 />
             </div>
             <Show when={text()}>
