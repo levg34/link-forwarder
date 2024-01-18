@@ -1,11 +1,13 @@
 import QRCode from 'qrcode'
-import { onMount } from 'solid-js'
+import { Show, onMount } from 'solid-js'
 import { createEffect } from 'solid-js'
 
 export default (props: { text: string }) => {
     let canvas: HTMLCanvasElement | ((el: HTMLCanvasElement) => void) | undefined
 
-    const generateQrCode = () => QRCode.toCanvas(canvas, props.text)
+    const generateQrCode = () => {
+        if (props.text) QRCode.toCanvas(canvas, props.text)
+    }
 
     onMount(() => {
         generateQrCode()
@@ -13,5 +15,9 @@ export default (props: { text: string }) => {
 
     createEffect(() => generateQrCode())
 
-    return <canvas ref={canvas} />
+    return (
+        <Show when={props.text} fallback={<div>QR Code cannot be generated with no data.</div>}>
+            <canvas ref={canvas} />
+        </Show>
+    )
 }
