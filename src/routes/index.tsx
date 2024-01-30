@@ -1,12 +1,12 @@
 // import "./index.css";
 
-import { A } from '@solidjs/router'
 import { Show, createSignal, onMount } from 'solid-js'
 import QrCode from '~/components/QrCode'
-import Connect from './connect'
+import Connect from '../components/Connect'
 
 export default function Home() {
     const [text, setText] = createSignal<string>('')
+
     const uuid = crypto.randomUUID()
 
     return (
@@ -25,8 +25,7 @@ export default function Home() {
             <Show when={text()}>
                 <QrCode text={text()} />
             </Show>
-            {/* <A href="/connect">Connect</A> */}
-            <Connect uuid={uuid}/>
+            <Connect uuid={uuid} />
         </main>
     )
 }
