@@ -31,4 +31,4 @@ TODO
 
 ## License
 
-Link Forwarder is licensed under the GNU GENERAL PUBLIC LICENSE Version 3. See the [LICENSE] file for more details.
+Link Forwarder is licensed under the GNU GENERAL PUBLIC LICENSE Version 3. See the [LICENSE](LICENSE) file for more details.
