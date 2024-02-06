@@ -1,6 +1,6 @@
 // Import the functions and the db from the file
-import { createConnection, canConnect, addLink, getLinks, removeLink, clearConnection } from '../../src/ts/db'
-import db from '../../src/ts/db'
+import { createConnection, canConnect, addLink, getLinks, removeLink, clearConnection } from '../../src/db/db'
+import db from '../../src/db/db'
 
 
 test('createConnection', () => {
