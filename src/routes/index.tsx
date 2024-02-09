@@ -1,7 +1,6 @@
 import { Show, createSignal } from 'solid-js'
 import QrCode from '~/components/QrCode'
 import Connect from '../components/Connect'
-import axios from 'axios'
 import Urls from '~/components/Urls'
 import SendUrls from '~/components/SendUrl'
 

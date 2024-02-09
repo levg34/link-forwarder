@@ -1,5 +1,5 @@
 import type { APIEvent } from '@solidjs/start/server'
-import { canConnect, createConnection } from '~/db/db'
+import { canConnect } from '~/db/db'
 
 export function GET({ params }: APIEvent) {
     const { hash } = params
