@@ -1,8 +1,9 @@
-// import "./index.css";
-
-import { Show, createSignal, onMount } from 'solid-js'
+import { Show, createSignal } from 'solid-js'
 import QrCode from '~/components/QrCode'
 import Connect from '../components/Connect'
+import axios from 'axios'
+import Urls from '~/components/Urls'
+import SendUrls from '~/components/SendUrl'
 
 export default function Home() {
     const [text, setText] = createSignal<string>('')
@@ -12,20 +13,12 @@ export default function Home() {
     return (
         <main>
             <h1>Link forwardinator 📡</h1>
-            <div>
-                <input
-                    type="text"
-                    value={text()}
-                    oninput={(e) => {
-                        setText(e.target.value)
-                    }}
-                    placeholder="Enter URL or text"
-                />
-            </div>
+            <SendUrls uuid={uuid} text={text()} setText={setText} />
             <Show when={text()}>
                 <QrCode text={text()} />
             </Show>
             <Connect uuid={uuid} />
+            <Urls uuid={uuid} />
         </main>
     )
 }

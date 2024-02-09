@@ -16,7 +16,7 @@ function Connected(props: { serverUuid: Resource<string | undefined> }) {
     )
 }
 
-export default function ConnectPage(props: { uuid: string }) {
+export default function Connect(props: { uuid: string }) {
     const [searchParams] = useSearchParams()
     const uuid = searchParams.uuid
 
