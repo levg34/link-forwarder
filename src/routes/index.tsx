@@ -7,7 +7,11 @@ import SendUrls from '~/components/SendUrl'
 export default function Home() {
     const [text, setText] = createSignal<string>('')
 
-    const uuid = crypto.randomUUID()
+    const uuid = sessionStorage.getItem('uuid') ?? crypto.randomUUID()
+
+    if (!sessionStorage.getItem('uuid')) {
+        sessionStorage.setItem('uuid', uuid)
+    }
 
     return (
         <main>
