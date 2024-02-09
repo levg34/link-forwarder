@@ -28,7 +28,7 @@
         "name": "Connect",
         "params": [],
         "headers": [],
-        "method": "POST",
+        "method": "GET",
         "auth": {
           "authType": "none",
           "authActive": true
@@ -47,6 +47,24 @@
         "params": [],
         "headers": [],
         "method": "GET",
+        "auth": {
+          "authType": "none",
+          "authActive": true
+        },
+        "preRequestScript": "",
+        "testScript": "",
+        "body": {
+          "contentType": null,
+          "body": null
+        }
+      },
+      {
+        "v": "1",
+        "endpoint": "https://sturdy-space-funicular-pjqvxg9g9wwfrjqg-3000.app.github.dev/api/hash1/init",
+        "name": "Init",
+        "params": [],
+        "headers": [],
+        "method": "POST",
         "auth": {
           "authType": "none",
           "authActive": true
