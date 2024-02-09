@@ -1,6 +1,7 @@
 import { useSearchParams } from '@solidjs/router'
 import axios from 'axios'
 import { For, Match, Switch, createResource } from 'solid-js'
+import Linkify from './Linkify'
 
 export default function Urls(props: { uuid: string }) {
     const [searchParams] = useSearchParams()
@@ -17,7 +18,13 @@ export default function Urls(props: { uuid: string }) {
             <Switch
                 fallback={
                     <ol>
-                        <For each={urls()}>{(url) => <li>{url}</li>}</For>
+                        <For each={urls()}>
+                            {(url) => (
+                                <li>
+                                    <Linkify text={url} />
+                                </li>
+                            )}
+                        </For>
                     </ol>
                 }
             >
