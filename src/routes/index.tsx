@@ -17,10 +17,9 @@ export default function Home() {
         <main>
             <h1>Link forwardinator 📡</h1>
             <SendUrls uuid={uuid} text={text()} setText={setText} />
-            <Show when={text()}>
+            <Show when={text()} fallback={<Connect uuid={uuid} />}>
                 <QrCode text={text()} />
             </Show>
-            <Connect uuid={uuid} />
             <Urls uuid={uuid} />
         </main>
     )
