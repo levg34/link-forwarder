@@ -10,5 +10,5 @@ export default function Linkify(props: Props) {
     if (isLink) {
         link = linkify.find(props.text)[0]
     }
-    return <div>{isLink ? <a href={link?.href ?? props.text}>{props.text}</a> : props.text}</div>
+    return <div>{isLink ? <a href={link?.href ?? props.text}>{props.text}</a> : decodeURIComponent(props.text)}</div>
 }
