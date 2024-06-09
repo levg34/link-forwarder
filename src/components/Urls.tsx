@@ -21,7 +21,7 @@ export default function Urls(props: { uuid: string }) {
                         <For each={urls()}>
                             {(url) => (
                                 <li>
-                                    <Linkify text={url} />
+                                    <Linkify text={decodeURIComponent(url)} />
                                 </li>
                             )}
                         </For>

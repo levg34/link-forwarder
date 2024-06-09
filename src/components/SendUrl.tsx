@@ -18,7 +18,9 @@ export default function SendUrls(props: { uuid: string; text: string; setText: S
             />
             <button
                 onclick={async () => {
-                    const { data } = await axios.post('/api/' + (uuid ? uuid : props.uuid) + '/link/' + props.text)
+                    const { data } = await axios.post(
+                        '/api/' + (uuid ? uuid : props.uuid) + '/link/' + encodeURIComponent(props.text)
+                    )
                     console.log(data)
                     props.setText('')
                 }}
